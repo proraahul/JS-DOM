@@ -69,7 +69,39 @@
 
     // get previous element
     let previousElement = current.previousElementSibling;
-    console.log(previousElement);
+    // console.log(previousElement);
+
+    while(previousElement){
+        // console.log(previousElement)
+        previousElement = previousElement.previousElementSibling;
+    }
+
+
+    // get all siblings in an array
+    let getSiblings = function(e){
+        // for collecting sibling an array
+        let siblings = [];
+
+        // if no parent, return no sibling
+        if(!e.parentNode){
+            return siblings;
+        }
+        // first child of the parentNode
+            let sibling = e.parentNode.firstChild;
+            // collecting sibling
+            while(sibling){
+                if(sibling.nodeType === 1 && sibling !== e){
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+                return siblings;
+            };
+
+            let siblings = getSiblings(document.querySelector('.current'));
+            let siblingText = siblings.map(e => e.innerHTML);
+            console.log(siblingText);
+
 
 </script>
 </html>
