@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js CreateElement Demo</title>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>Home</li>
+    </ul>
+</body>
+<script>
+    let div = document.createElement('div')
+    div.id = 'content';
+    div.className = 'container';
+    div.innerHTML = '<p>Create Element Example</p>';
+    document.body.appendChild(div)
+
+    let text = document.createTextNode('Hello Duniya I am text content under div');
+    div.appendChild(text);
+
+    // create element and add into div
+    let h2 = document.createElement('h2');
+    h2.textContent = 'Add h2 Element into the div';
+    div.appendChild(h2);
+
+    // Create list item
+    let li = document.createElement('li');
+    li.textContent = 'Products';
+
+    let menu = document.getElementById('menu');
+    menu.appendChild(li);
+
+    li = document.createElement('li');
+    li.textContent = 'About Us';
+    menu.appendChild(li);
+
+    // create a dynamic script
+    let script = document.createElement('script');
+    script.src = '/lib.js';
+    document.body.appendChild(script);
+
+    // you can first create a new helper function that loads a javascript file from an URL:
+
+    function loadJS(url) {
+        let script = document.createElement('script');
+        script.src = '/lib.js';
+        document.body.appendChild(script);
+    }
+    loadJS('/lib.js');
+
+    // to load a javascript file asynchronously, you set the async attribute of the script element to true
+
+    function loadJSAsync(url){
+        let script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        document.body.appendChild(script);
+    }
+
+</script>
+
+</html>
