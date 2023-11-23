@@ -12,6 +12,9 @@
     <ul id="menu">
         <li>Home</li>
     </ul>
+    <ul id="menu1">
+        <li>Home</li>
+    </ul>
 </body>
 <script>
     let div = document.createElement('div')
@@ -61,6 +64,17 @@
         script.async = true;
         document.body.appendChild(script);
     }
+
+    // appendChild method
+    function createMenuItem(name){
+        let li = document.createElement('li');
+        li.textContent = name;
+        return li;
+        const menu1 = document.getElementById('menu1')
+    }
+    menu1.appendChild(createMenuItem('Home'));
+    menu1.appendChild(createMenuItem('About Us'));
+    menu1.appendChild(createMenuItem('Contact'));
 
 </script>
 
