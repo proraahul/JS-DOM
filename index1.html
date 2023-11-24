@@ -15,6 +15,19 @@
     <ul id="menu1">
         <li>Home</li>
     </ul>
+
+     <!-- moving node within the document -->
+    <ul id='first-list'>
+        <li>Everst</li>
+        <li>Fuji</li>
+        <li>Kilimanjaro</li>
+    </ul>
+
+    <ul id='second-list'>
+        <li>karakoram Range</li>
+        <li>Denali</li>
+        <li>Mont Balnc</li>
+    </ul>
 </body>
 <script>
     let div = document.createElement('div')
@@ -76,20 +89,15 @@
     menu1.appendChild(createMenuItem('About Us'));
     menu1.appendChild(createMenuItem('Contact'));
 
-    // moving node within the document
-    <ul id='first-list'>
-        <li>Everst</li>
-        <li>Fuji</li>
-        <li>Kilimanjaro</li>
-    </ul>
-
-    <ul id='second-list'>
-        <li>karakoram Range</li>
-        <li>Denali</li>
-        <li>Mont Balnc</li>
-    </ul>
-
-    let firstList = document.getElementById('first-list')
+    
+// get the first list
+    let firstList = document.getElementById('first-list');
+    // take the first child element
+    const everest = firstList.firstElementChild;
+    // get the second list
+    const secondList = document.getElementById('second-list');
+    // append the everest to the second list
+    secondList.appendChild(everest);
 
 
 </script>
