@@ -28,6 +28,13 @@
         <li>Denali</li>
         <li>Mont Balnc</li>
     </ul>
+
+    <div id="note">
+        Hello Javascript innerText Demo
+        <!-- <p>Hello</p> -->
+        <span style="display: none;">javascript text Content Demo</span>
+    </div>
+
 </body>
 <script>
     let div = document.createElement('div')
@@ -98,6 +105,13 @@
     const secondList = document.getElementById('second-list');
     // append the everest to the second list
     secondList.appendChild(everest);
+
+
+    // textContent vs innerText
+    let note = document.getElementById('note');
+    // console.log(note.innerText);
+    console.log(note.textContent);
+    // note.textContent = 'this is note'
 
 
 </script>
