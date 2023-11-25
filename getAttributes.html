@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS getAttribute() Demo</title>
+</head>
+<body>
+    <a href="https://www.javascripttutorai.com" target="_blank" id="js">Javascript Tutorial</a>
+</body>
+<script>
+    let link = document.querySelector('#js');
+    if(link){
+        let target = link.getAttribute('target');
+        console.log(target);
+
+        let title = link.getAttribute('title');
+        console.log(title); //return null if doesn't exist
+
+        // remove attribute
+        if(link){
+            // link.removeAttribute('target')
+        }
+    }
+</script>
+</html>
