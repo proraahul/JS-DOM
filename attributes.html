@@ -10,8 +10,18 @@
     <label for="username">Name:
         <input type="text" id="username" secured="'true" autocomplete="off" >
     </label>
+    <label for="username">Male:
+        <input type="checkbox" id="chkAccept" checked >
+    </label>
+    <input type="password" id="password" style="color:red;width: 50%;">
+
+    <!-- custom attributes with prefix data -->
+    <div id="main" data-progress="pending" data-value="10%"></div>
+
+
 </body>
 <script>
+
     let input = document.querySelector('#username');
     console.log(input.secured) //undefined because secured is non standard attribute
 
@@ -23,6 +33,19 @@
     console.log(input.getAttribute('tabIndex'));
 
     input.setAttribute('value', 'guest');
-    console.log(input.value)
+    console.log(input.value);
+
+    let checkBox = document.querySelector('#chkAccept');
+    console.log(checkBox.checked);
+
+     input = document.querySelector('#password');
+     let styleAttr = input.getAttribute('style');
+     console.log(styleAttr);
+     console.dir(input.style);
+
+    //  custom attributes
+    let bar = document.querySelector('#main');
+    console.log(bar.dataset)
+
 </script>
 </html>
