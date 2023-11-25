@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes</title>
+</head>
+<body>
+    <label for="username">Name:
+        <input type="text" id="username" secured="'true" autocomplete="off" >
+    </label>
+</body>
+<script>
+    let input = document.querySelector('#username');
+    console.log(input.secured) //undefined because secured is non standard attribute
+
+    for(let attr of input.attributes){
+        console.log(`${attr.name} = ${attr.value}`)
+    }
+
+    input.setAttribute('tabindex', 2);
+    console.log(input.getAttribute('tabIndex'));
+
+    input.setAttribute('value', 'guest');
+    console.log(input.value)
+</script>
+</html>
