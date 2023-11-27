@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Event Handler</title>
+</head>
+
+<body>
+    <button id="btn">Click Me!</button>
+    <button id="button">Send</button>
+    <a href="https://www.ggogle.com" target="_blank">Google</a>
+
+    <input type="button" value="save" onclick="alert('clicked!')">
+    <input type="button" value="save" onclick="showAlert()">
+</body>
+<script>
+
+    let btn = document.querySelector('#btn');
+    btn.addEventListener('click', function (e) {
+        alert('it was clicked');
+        // console.log(e.type);
+    });
+    btn.removeEventListener('click', function(e){alert('it was clicked');})
+
+    let link = document.querySelector('a');
+    link.addEventListener('click', function (event) {
+        console.log('clicked');
+        event.preventDefault();
+    });
+
+    let button = document.querySelector('#button');
+    button.addEventListener('click', function (event) {
+        console.log('The button was clicked');
+        event.stopPropagation();
+    });
+
+    document.body.addEventListener('click', function (event) {
+        console.log('the body was clicked');
+    });
+
+    function showAlert(){
+        alert('clicked');
+    }
+
+    
+
+</script>
+</html>
