@@ -9,10 +9,17 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container flex javascript content" id="content">
         <h1 class="heading">Hello World!</h1>
         <p id="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, repellat!</p>
     </div>
+
+    <ul id="menu" class="vertical main">
+        <li>HomePage</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
 </body>
 <script>
     let heading = document.querySelector('.heading');
@@ -32,6 +39,24 @@
     }
     let content = document.querySelector('#content');
     css(content, {background:'yellow',border:'solid 1px red'});
+
+    // className
+    let menu = document.querySelector('#menu');
+    // console.log(menu.className);
+
+    menu.className += ' newClassName';
+    menu.classList.add('className'); // its better for use
+    console.log(menu.className);
+
+
+    let div = document.querySelector('#content');
+    div.classList.add('info');
+    // div.classList.remove('content', 'info')
+    // div.classList.replace('info', 'inform');
+    // console.log(div.classList.contains('info'));
+    for(let cssClass of div.classList){
+        console.log(cssClass);
+    }
 
 </script>
 
