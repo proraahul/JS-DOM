@@ -7,7 +7,7 @@
     <title>Js Load Event Demo</title>
 </head>
 <body onload="console.log('Loaded')">
-    
+    <a href="https://www.google.com">Google</a>
 </body>
 <script>
     window.addEventListener('load', function(e){
@@ -38,6 +38,13 @@
         script.src = app.js //as a example
         document.body.appendChild(script);
     }
+
+    // beforeunload event
+    window.addEventListener('beforeunload', function(e){
+            // alert('Confirm to close the page');
+            e.preventDefault();
+            e.returnValue = '';
+    })
 
 </script>
 </html>
