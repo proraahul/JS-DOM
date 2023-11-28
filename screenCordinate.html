@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting JS Mouse Location Demo</title>
+</head>
+<style>
+
+    #track{
+        background-color: goldenrod;
+        height: 200px;
+        width: 400px;
+    }
+</style>
+
+<body>
+    <p>Move your mouse to see its location</p>
+    <div id="track"></div>
+    <p id="log"></p>
+</body>
+
+<script>
+
+        let track = document.querySelector('#track');
+
+        track.addEventListener('mousemove', (e) => {
+            let log = document.querySelector('#log');
+            log.innerText = `Screen X/Y: (${e.screenX}, ${e.screenY})
+                             Client X/Y: (${e.clientX}, ${e.clientY})`  
+        });
+
+</script>
+
+</html>
