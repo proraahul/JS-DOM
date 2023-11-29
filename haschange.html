@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashchange Event Example</title>
+</head>
+<body>
+
+  <h1>Hashchange Event Example</h1>
+  
+  <ul>
+    <li><a href="#section1">Section 1</a></li>
+    <li><a href="#section2">Section 2</a></li>
+    <li><a href="#section3">Section 3</a></li>
+  </ul>
+
+  <div id="content">
+    <!-- Content will be dynamically updated based on the hash -->
+  </div>
+
+  <script>
+    // Function to handle hash changes
+    function handleHashChange() {
+      // Get the current hash from the URL
+      var hash = window.location.hash;
+    //   console.log(hash)
+
+      // Update the content based on the hash
+      if (hash === "#section1") {
+        document.getElementById("content").innerHTML = "This is Section 1 content.";
+      } else if (hash === "#section2") {
+        document.getElementById("content").innerHTML = "This is Section 2 content.";
+      } else if (hash === "#section3") {
+        document.getElementById("content").innerHTML = "This is Section 3 content.";
+      } else {
+        document.getElementById("content").innerHTML = "Default content.";
+      }
+    }
+
+    // Add an event listener for the hashchange event
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Call the handleHashChange function initially to set the initial content based on the current hash
+    handleHashChange();
+  </script>
+
+</body>
+</html>
