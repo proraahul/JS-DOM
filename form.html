@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Form</title>
+    <title>Javascript Form Validation</title>
 </head>
 <style>
     body {
@@ -17,7 +17,6 @@
     align-items: center;
     height: 100vh;
 }
-
 #signup {
     background-color: #fff;
     padding: 20px;
@@ -26,22 +25,18 @@
     width: 300px;
     text-align: center;
 }
-
 h1 {
     color: #333;
 }
-
 .field {
     margin-bottom: 20px;
     text-align: left;
 }
-
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
-
 input {
     width: 100%;
     padding: 8px;
@@ -49,7 +44,6 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 button {
     background-color: #4caf50;
     color: #fff;
@@ -59,13 +53,13 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
-
 button:hover {
     background-color: #45a049;
 }
 
 </style>
 <body>
+
     <form action="signup.html" method="post" id="signup">
         <h1>Sign Up</h1>
         <div class="field">
@@ -82,26 +76,30 @@ button:hover {
         <br>
         <button type="submit">Subscribe</button>
     </form>
+
 </body>
 <script>
     // return collection of all forms:
-    // document.forms -> document.forms[0]
+    // document.forms -> document.forms[0];
 
     const form = document.getElementById('signup');
-    /* by index
+    /* 
+    by index
     form.elements[0];
     // by name
-    form.elements['name']; */
+    form.elements['name']; 
+    */
 
     //access elements by name
     const name = form.elements['name'];
     const email = form.elements['email'];
+    // console.log(name, email);
 
     //getting the element value
     let fullName = name.value;
     let emailAddress = email.value;
 
-    // show a message with a type of input
+    //show a message with a type of input
     function showMessage(input, message, type) {
         // get the small element and show the msg
         const msg = input.parentNode.querySelector('small');
@@ -114,14 +112,16 @@ button:hover {
     function showError(input, message) {
         return showMessage(input, message, false);
     }
+
     function showSuccess(input) {
         return showMessage(input, '', true);
     }
+
     function hasValue(input, message) {
         if (input.value.trim() === "") {
             return showError(input, message);
         }
-        return showSuccess(input)
+        return showSuccess(input);
     }
 
 
