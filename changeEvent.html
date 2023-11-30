@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS change Event for Input Element</title>
 </head>
+<style>
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
 <body>
+    <h1>JS change Event for Input Element</h1>
     <label for="message">Message:</label>
     <input type="text" class="input" id="message" name="message">
     <button>Submit</button>
     <p id="result"></p>
 
     <!-- Javascript change event for radio button -->
+    <h1> Javascript change event for radio button</h1>
     <span>Status:</span>
     <input type="radio" id="pending" name="status">
     <label for="pending">Pending</label>
@@ -21,6 +28,26 @@
     <input type="radio" id="rejected" name="status">
     <label for="rejected">Rejected</label>
     <p id="results"></p>
+
+    <!-- change event for checkbox -->
+    <h1> change event for checkbox</h1>
+    <label for="status">Web Technology:</label>
+    <input type="checkbox" id="html">HTML
+    <input type="checkbox" id="css">CSS
+    <input type="checkbox" id="js">JavaScript
+    <p id="output"></p>
+
+    <!-- change event for select Element -->
+    <h1>change event for select Element</h1>
+    <select name="" id="lang">
+        <option value="">Select a language</option>
+        <option value="javascript">Javascript</option>
+        <option value="typescript">TypeScript</option>
+        <option value="php">Php</option>
+        <option value="Python">Python</option>
+        <option value="java">Java</option>
+    </select>
+    <p class="result"></p>
 </body>
 <script>
     let input = document.querySelector('.input');
@@ -48,6 +75,35 @@
                 break;    
         }
         result.textContent = message;
+    });
+
+    // change event for checkbox
+    let output = document.getElementById('output');
+    document.body.addEventListener('change', function(e){
+        let target = e.target;
+        let msg;
+
+        switch(target.id){
+            case 'html':
+                msg = 'The Html checkbox changed';
+                break;
+            case 'css':
+                msg = 'The Css checkbox changed';
+                break;
+            case 'js':
+                msg = 'The Javascript checkbox changed';
+                break;     
+        }
+        output.textContent = msg;
+    });
+
+    // change event for select Element
+
+    let select = document.getElementById('lang');
+    let selectResult = document.querySelector('.result');
+    select.addEventListener('change', function(e){
+        selectResult.textContent = this.value;
     })
+
 </script>
 </html>
