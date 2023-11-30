@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS change Event for Input Element</title>
+</head>
+<body>
+    <label for="message">Message:</label>
+    <input type="text" class="input" id="message" name="message">
+    <button>Submit</button>
+    <p id="result"></p>
+
+    <!-- Javascript change event for radio button -->
+    <span>Status:</span>
+    <input type="radio" id="pending" name="status">
+    <label for="pending">Pending</label>
+    <input type="radio" id="resolved" name="status">
+    <label for="resolved">Resolved</label>
+    <input type="radio" id="rejected" name="status">
+    <label for="rejected">Rejected</label>
+    <p id="results"></p>
+</body>
+<script>
+    let input = document.querySelector('.input');
+    let result = document.getElementById('result');
+
+    input.addEventListener('change', function(){
+        result.textContent = this.value;
+    });
+
+    // Javascript change event for radio button
+    let results = document.getElementById('results');
+    document.body.addEventListener('change', function(e){
+        let target = e.target;
+        let message;
+
+        switch(target.id){
+            case 'pending':
+                message = 'The Pending radio button changed';
+                break;
+            case 'resolved':
+                message = 'The Resolved radio button changed'    
+                break;
+            case 'rejected':
+                message = 'The Rejected radio button changed';
+                break;    
+        }
+        result.textContent = message;
+    })
+</script>
+</html>
